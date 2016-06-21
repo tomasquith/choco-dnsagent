@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>dnsagent</id>
+    <title>DNSAgent</title>
+    <version>1.6.5781</version>
+    <authors>Stackie Jia</authors>
+    <owners>Tom Asquith</owners>
+    <summary>A Windows alternative to dnsmasq</summary>
+    <description>
+A powerful "hosts" replacement.
+
+### Features
+
+* Use regular expression to match the domain name.
+* Both IPv4 and IPv6 are supported.
+* Support non-standard listening port (ports other than 53).
+* It's possible to use DNSPod HttpDNS protocal to query for A record.
+* Return a immediate address (A/AAAA record) or redirect query to a custom name server on pattern matched.
+* Redirect one domain name to another, support regular expression matching and replacing.
+* Local cache with custom TTL settings.
+* Support source IP whitelist to filter unauthorized clients.
+* Support compression pointer mutation when querying another name server. This may avoid MITM attack in some network environments.
+
+This package installs to $env:ChocolateyToolsLocation and will add and start the service 'dnsagent'. 
+
+Tested on Windows Server 2012 R2
+    </description>
+    <projectUrl>https://github.com/stackia/DNSAgent</projectUrl>
+    <tags>dnsagent dns dnsmasq windows admin</tags>
+    <copyright>Copyright (c) 2015 Stackie Jia</copyright>
+    <licenseUrl>https://raw.githubusercontent.com/stackia/DNSAgent/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

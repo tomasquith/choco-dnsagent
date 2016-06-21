@@ -1,0 +1,13 @@
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+1) Download binary from https://github.com/stackia/DNSAgent/releases/download/v1.6.5781/DNSAgent-1.6.5781.zip
+2) Extract zip and compare checksums for the following group of files:
+
+ARSoft.Tools.Net.dll
+DNSAgent.exe
+Newtonsoft.Json.dll
+options.cfg
+rules.cfg
+
+The batch scripts were omitted from this package as they just prompt for elevation if required.
