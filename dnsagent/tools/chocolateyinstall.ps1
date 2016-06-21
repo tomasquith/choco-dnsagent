@@ -3,7 +3,7 @@
 $packageName= 'dnsagent'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$installDir = Get-ToolsLocation"\$packageName"
+$installDir = Get-ToolsLocation + "\$packageName"
 $tempDir = "$Env:TEMP\$packageName"
 
 $fileLocation = Join-Path $installDir 'DNSAgent.exe'
@@ -40,7 +40,7 @@ if ($svc)
     $svc.WaitForStatus('Running', '00:02:00')
     Write-Verbose "Stopping service."
     $svc.Stop()
-    Write-Verbose "Waiting for service to start."
+    Write-Verbose "Waiting for service to stop."
     $svc.WaitForStatus('Stopped', '00:02:00')
 
     Write-Verbose "Replacing configuration files with the the previous versions."

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
@@ -29,6 +29,7 @@ This package installs to $env:ChocolateyToolsLocation and will add and start the
 Tested on Windows Server 2012 R2
     </description>
     <projectUrl>https://github.com/stackia/DNSAgent</projectUrl>
+	<packageSourceUrl>https://github.com/tomasquith/choco-dnsagent</packageSourceUrl>
     <tags>dnsagent dns dnsmasq windows admin</tags>
     <copyright>Copyright (c) 2015 Stackie Jia</copyright>
     <licenseUrl>https://raw.githubusercontent.com/stackia/DNSAgent/master/LICENSE</licenseUrl>
