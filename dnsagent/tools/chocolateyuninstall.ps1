@@ -3,7 +3,7 @@
 $packageName= 'dnsagent'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$installDir = Get-ToolsLocation + "\$packageName"
+$installDir = Get-BinRoot + "\$packageName"
 $fileLocation = Join-Path $installDir 'DNSAgent.exe'
 
 Write-Verbose "Uninstalling DNSAgent."
