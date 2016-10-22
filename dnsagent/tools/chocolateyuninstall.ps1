@@ -1,16 +1,17 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$packageName= 'dnsagent'
-$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$packageName = 'dnsagent'
+$serviceName = 'DNSAgent'
 
-$installDir = Get-BinRoot + "\$packageName"
-$fileLocation = Join-Path $installDir 'DNSAgent.exe'
+$packageDir = "$Env:ChocolateyInstall\lib\$packageName"
+$installDir = "$packageDir\tools"
 
-Write-Verbose "Uninstalling DNSAgent."
-Install-ChocolateyInstallPackage -PackageName $packageName -FileType 'EXE' -SilentArgs '--uninstall' -File $fileLocation
+$executablePath = Join-Path $installDir 'DNSAgent.exe'
 
-if (Test-Path $installDir) 
-{ 
+Write-Verbose "Uninstalling DNSAgent ($executablePath)"
+Install-ChocolateyInstallPackage -PackageName $packageName -FileType 'EXE' -SilentArgs '--uninstall' -File $executablePath
+
+if (Test-Path $installDir) { 
     Write-Verbose "Removing install directory."
     rm $installDir -Force -Recurse 
 }
